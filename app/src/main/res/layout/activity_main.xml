@@ -5,343 +5,339 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/NewWhite"
+    android:onClick="nineText"
     tools:context=".MainActivity">
-<!--This Layout Hold All the Inner Layouts Parent Layouts-->
+    <!--This Layout Hold All the Inner Layouts Parent Layouts-->
     <LinearLayout
+        android:id="@+id/buttons_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:id="@+id/buttons_layout"
-        android:layout_alignParentBottom="true">
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
 
-<!--This where the solution outputed-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="0"
-                android:textSize="26dp"
-                android:textAlignment="textEnd"
-                android:layout_marginRight="15dp"
-                android:textColor="#A8A7A7"
-                android:id="@+id/Solution"
-                />
-
-<!--This is where the Results-->
+        <!--This where the solution outputed-->
         <TextView
+            android:id="@+id/Solution"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
             android:text="0"
-            android:textSize="50dp"
-            android:id="@+id/Result"
             android:textAlignment="textEnd"
+            android:textColor="#A8A7A7"
+            android:textSize="26dp" />
+
+        <!--This is where the Results-->
+        <TextView
+            android:id="@+id/Result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
+            android:text="0"
+            android:textAlignment="textEnd"
             android:textColor="@color/black"
+            android:textSize="50dp"
 
-          />
+            />
 
-<!--This Layout is is the first four from top-->
+        <!--This Layout is is the first four from top-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center">
-<!--This Button is for Clear-->
+            android:gravity="center"
+            android:orientation="horizontal">
+            <!--This Button is for Clear-->
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/Clear"
                 style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 android:layout_width="100dp"
-                android:layout_marginRight="3dp"
                 android:layout_height="72dp"
+                android:layout_marginRight="3dp"
                 android:backgroundTint="@color/white"
-                android:id="@+id/Clear"
+                android:onClick="clearText"
                 android:text="C"
-                android:textSize="32dp"
                 android:textColor="#FF9800"
 
-           />
-<!--This button is for backspace delete-->
+                android:textSize="32dp" />
+            <!--This button is for backspace delete-->
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/BackSpace"
                 style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 android:layout_width="100dp"
-                android:layout_marginRight="3dp"
                 android:layout_height="72dp"
+                android:layout_marginRight="3dp"
                 android:backgroundTint="@color/white"
-                android:id="@+id/BackSpace"
-                app:icon="@drawable/baseline_backspace_24"
+                android:onClick="backspaceText"
                 android:textSize="32dp"
-                app:iconTint="#656363"
+                app:icon="@drawable/baseline_backspace_24"
                 app:iconGravity="textStart"
 
-                />
+                app:iconTint="#656363" />
             <!--This Button is for Percentage-->
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/percentage"
                 style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 android:layout_width="100dp"
-                android:layout_marginRight="3dp"
                 android:layout_height="72dp"
+                android:layout_marginRight="3dp"
                 android:backgroundTint="@color/white"
-                android:id="@+id/percentage"
                 android:text="%"
-                android:textSize="32dp"
                 android:textColor="#656363"
+                android:textSize="32dp"
 
                 />
             <!--This Button is for Divide-->
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/Divide"
                 style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 android:layout_width="100dp"
-                android:layout_marginRight="3dp"
                 android:layout_height="72dp"
+                android:layout_marginRight="3dp"
                 android:backgroundTint="@color/white"
-                android:id="@+id/Divide"
-                android:textColor="#656363"
+                android:onClick="divideText"
                 android:text="÷"
-                android:textSize="32dp"
+                android:textColor="#656363"
 
-                />
+                android:textSize="32dp" />
         </LinearLayout>
-<!--This Layout is the second-->
+        <!--This Layout is the second-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:layout_marginVertical="3dp"
             android:gravity="center"
-            android:layout_marginVertical="3dp">
-<!--Number 7 Button-->
+            android:orientation="horizontal">
+            <!--Number 7 Button-->
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/Num7"
                 style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 android:layout_width="100dp"
-                android:layout_marginRight="3dp"
                 android:layout_height="72dp"
+                android:layout_marginRight="3dp"
                 android:backgroundTint="@color/white"
-                android:id="@+id/Num7"
+                android:onClick="sevenText"
                 android:text="7"
-                android:textSize="32dp"
 
-                />
+                android:textSize="32dp" />
             <!--Number 8 Button-->
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/Num8"
                 style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 android:layout_width="100dp"
-                android:layout_marginRight="3dp"
                 android:layout_height="72dp"
+                android:layout_marginRight="3dp"
                 android:backgroundTint="@color/white"
+                android:onClick="eightText"
                 android:text="8"
-                android:id="@+id/Num8"
-                android:textSize="32dp"
 
 
-                />
+                android:textSize="32dp" />
             <!--Number 9 Button-->
             <com.google.android.material.button.MaterialButton
-                style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
-                android:layout_width="100dp"
-                android:layout_marginRight="3dp"
-                android:layout_height="72dp"
-                android:backgroundTint="@color/white"
                 android:id="@+id/Num9"
-                android:text="9"
-                android:textSize="32dp"
-
-                />
-<!--        Multiply Button-->
-            <com.google.android.material.button.MaterialButton
                 style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 android:layout_width="100dp"
-                android:layout_marginRight="3dp"
                 android:layout_height="72dp"
+                android:layout_marginRight="3dp"
                 android:backgroundTint="@color/white"
+                android:onClick="nineText"
+                android:text="9"
+
+                android:textSize="32dp" />
+            <!--        Multiply Button-->
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/Multiply"
+                style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+                android:layout_width="100dp"
+                android:layout_height="72dp"
+                android:layout_marginRight="3dp"
+                android:backgroundTint="@color/white"
+                android:onClick="multiplyText"
                 android:text="x"
-                android:textSize="32dp"
                 android:textColor="#656363"
 
-                />
+                android:textSize="32dp" />
 
 
         </LinearLayout>
 
-<!--This is the Third Layout-->
+        <!--This is the Third Layout-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:gravity="center"
-            >
+            android:orientation="horizontal">
             <!--Number 4 Button-->
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/Num4"
                 style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 android:layout_width="100dp"
-                android:layout_marginRight="3dp"
                 android:layout_height="72dp"
+                android:layout_marginRight="3dp"
                 android:backgroundTint="@color/white"
-                android:id="@+id/Num4"
+                android:onClick="fourText"
                 android:text="4"
-                android:textSize="32dp"
 
-                />
+                android:textSize="32dp" />
             <!--Number 5 Button-->
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/Num5"
                 style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 android:layout_width="100dp"
-                android:layout_marginRight="3dp"
                 android:layout_height="72dp"
+                android:layout_marginRight="3dp"
                 android:backgroundTint="@color/white"
+                android:onClick="fiveText"
                 android:text="5"
-                android:id="@+id/Num5"
-                android:textSize="32dp"
 
 
-                />
+                android:textSize="32dp" />
             <!--Number 6 Button-->
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/Num6"
                 style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 android:layout_width="100dp"
-                android:layout_marginRight="3dp"
                 android:layout_height="72dp"
+                android:layout_marginRight="3dp"
                 android:backgroundTint="@color/white"
-                android:id="@+id/Num6"
+                android:onClick="sixText"
                 android:text="6"
-                android:textSize="32dp"
 
-                />
+                android:textSize="32dp" />
             <!--        Subtract Button-->
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/Subtract"
                 style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 android:layout_width="100dp"
-                android:layout_marginRight="3dp"
                 android:layout_height="72dp"
+                android:layout_marginRight="3dp"
                 android:backgroundTint="@color/white"
-                android:id="@+id/Subtract"
+                android:onClick="minusText"
                 android:text="-"
-                android:textSize="32dp"
                 android:textColor="#656363"
 
-                />
+                android:textSize="32dp" />
 
 
         </LinearLayout>
-<!--        This is the Fourth Layout-->
+        <!--        This is the Fourth Layout-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
             android:layout_marginTop="3dp"
-            >
+            android:gravity="center"
+            android:orientation="horizontal">
             <!--Number 1 Button-->
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/Num1"
                 style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 android:layout_width="100dp"
-                android:layout_marginRight="3dp"
                 android:layout_height="72dp"
+                android:layout_marginRight="3dp"
                 android:backgroundTint="@color/white"
-                android:id="@+id/Num1"
+                android:onClick="oneText"
                 android:text="1"
-                android:textSize="32dp"
 
-                />
+                android:textSize="32dp" />
             <!--Number 2 Button-->
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/Num2"
                 style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 android:layout_width="100dp"
-                android:layout_marginRight="3dp"
                 android:layout_height="72dp"
+                android:layout_marginRight="3dp"
                 android:backgroundTint="@color/white"
+                android:onClick="twoText"
                 android:text="2"
-                android:id="@+id/Num2"
-                android:textSize="32dp"
 
 
-                />
+                android:textSize="32dp" />
             <!--Number 3 Button-->
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/Num3"
                 style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 android:layout_width="100dp"
-                android:layout_marginRight="3dp"
                 android:layout_height="72dp"
+                android:layout_marginRight="3dp"
                 android:backgroundTint="@color/white"
-                android:id="@+id/Num3"
+                android:onClick="threeText"
                 android:text="3"
-                android:textSize="32dp"
 
-                />
+                android:textSize="32dp" />
             <!--        Subtract Button-->
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/Addition"
                 style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 android:layout_width="100dp"
-                android:layout_marginRight="3dp"
                 android:layout_height="72dp"
+                android:layout_marginRight="3dp"
                 android:backgroundTint="@color/white"
-                android:id="@+id/Addition"
+                android:onClick="additionText"
                 android:text="+"
-                android:textSize="32dp"
                 android:textColor="#656363"
 
-                />
+                android:textSize="32dp" />
         </LinearLayout>
         <!--        This is the Fift Layout-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
             android:layout_marginTop="3dp"
-            >
+            android:gravity="center"
+            android:orientation="horizontal">
             <!--Number AC Button-->
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/BtnAC"
                 style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 android:layout_width="100dp"
-                android:layout_marginRight="3dp"
                 android:layout_height="72dp"
+                android:layout_marginRight="3dp"
                 android:backgroundTint="@color/white"
-                android:id="@+id/BtnAC"
+                android:onClick="clearTextAll"
                 android:text="AC"
                 android:textColor="#FB8C00"
-                android:textSize="32dp"
 
-                />
+                android:textSize="32dp" />
             <!--Number 0 Button-->
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/Num0"
                 style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 android:layout_width="100dp"
-                android:layout_marginRight="3dp"
                 android:layout_height="72dp"
+                android:layout_marginRight="3dp"
                 android:backgroundTint="@color/white"
+                android:onClick="zeroText"
                 android:text="0"
-                android:id="@+id/Num0"
-                android:textSize="32dp"
 
 
-                />
+                android:textSize="32dp" />
             <!--Number . Button-->
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/BtnDot"
                 style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 android:layout_width="100dp"
-                android:layout_marginRight="3dp"
                 android:layout_height="72dp"
+                android:layout_marginRight="3dp"
                 android:backgroundTint="@color/white"
-                android:id="@+id/BtnDot"
+                android:onClick="decimalDotText"
                 android:text="."
-                android:textSize="32dp"
 
-                />
+                android:textSize="32dp" />
             <!-- Equals Button-->
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/Equals"
                 style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 android:layout_width="100dp"
-                android:layout_marginRight="3dp"
                 android:layout_height="72dp"
-                android:id="@+id/Equals"
+                android:layout_marginRight="3dp"
+                android:onClick="equalResults"
                 android:text="="
-                android:textSize="32dp"
 
                 android:textColor="@color/white"
-                app:backgroundTint="#FB8C00"
-                />
+                android:textSize="32dp"
+                app:backgroundTint="#FB8C00" />
         </LinearLayout>
     </LinearLayout>
-
 
 
 </RelativeLayout>

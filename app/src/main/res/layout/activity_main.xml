@@ -81,11 +81,11 @@
                 android:layout_height="72dp"
                 android:layout_marginRight="3dp"
                 android:backgroundTint="@color/white"
+                android:onClick="modulusText"
                 android:text="%"
                 android:textColor="#656363"
-                android:textSize="32dp"
 
-                />
+                android:textSize="32dp" />
             <!--This Button is for Divide-->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/Divide"

@@ -7,7 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import java.io.Console;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,11 +36,11 @@ public class MainActivity extends AppCompatActivity {
         resultsTV = findViewById(R.id.Solution);
     }
 
-    //df here must be 0
     public void setWorkings(String givenValue){
         workings = workings + givenValue;
         workingsTV.setText(workings);
     }
+
 
     //Code Lines Initiation Logic
     //Call Logics for Signs and clear
@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         workingsTV.setText("0");
         workings = "";
     }
+
     public void backspaceText(View view){
         //Throw Error and Set to Zero instead
         StringBuffer removetxt = new StringBuffer(workings);
@@ -88,13 +89,71 @@ public class MainActivity extends AppCompatActivity {
     public void decimalDotText(View view){
         setWorkings(".");
     }
-    public void equalResults(View view){
-        //Set Action Taking Equals
-        for(int countIt = 0; countIt < workings.length(); countIt++){
-            String setTemp = workings.substring(0,countIt);
-            Log.e("", setTemp);
-        }
+    public void modulusText(View view){
+        setWorkings("%");
+    }
 
+    public void equalResults(View view){
+        try {
+            //Get and Set
+            String mathTemp = workings;
+            char[] mtTMP = mathTemp.toCharArray();
+            String[] mtStr = new String[mtTMP.length];
+
+            //Copy Array To Array
+            for (int i = 0; i < mtStr.length; i++) {
+                mtStr[i] = String.valueOf(mtTMP[i]);
+            }
+
+            //Call Stringbuilder, for some reason, ginawa ko kaninang umaga, but how did I forget
+            //this thing??!!
+            StringBuilder sbTp = new StringBuilder();
+            for (String lst : mtStr) {
+                if (lst.equals("+") || lst.equals("-") || lst.equals("*") || lst.equals("/") || lst.equals("%")) {
+                    sbTp.append(" " + lst + " ");
+                } else {
+                    sbTp.append(lst);
+                }
+            }
+            //Get Result, check for Operators First
+            String[] spT2 = sbTp.toString().split("\\s+"); //Thanks to RegEx Generator
+            double result = Double.parseDouble(spT2[0]);
+
+            //Check Operator
+            for (int go = 1; go < spT2.length; go += 2) {
+                String operator = spT2[go];
+                double numbers = Double.parseDouble(spT2[go + 1]);
+
+                //Using Switch case, Optimize Memory than spamming if-else
+                switch (operator) {
+                    case "+":
+                        result += numbers;
+                        break;
+                    case "-":
+                        result -= numbers;
+                        break;
+                    case "*":
+                        result *= numbers;
+                        break;
+                    case "/":
+                        result /= numbers;
+                        break;
+                    case "%":
+                        result %= numbers;
+                        break;
+                    default:
+                        throw new IllegalArgumentException("Reason : " + operator);
+                }
+
+            }
+            resultsTV.setText(String.valueOf(result));
+        }catch (Exception e){
+            //Operator Spam Detection
+            String spamDetected = workings.substring(0,workings.length()-1);
+            workings = spamDetected;
+            workingsTV.setText(workings);
+            Log.e("REASON",e.getMessage());
+        }
     }
 
     //Call Logics for Numbers
